@@ -1,51 +1,97 @@
-# Testes End to End - Ebac Shop
-### Exercício para os alunos de Qualidade de software da EBAC 
+# 🧪 Testes End-to-End com Cypress
 
-Ebac shop: http://lojaebac.ebaconline.art.br/
+## 📌 Sobre o projeto
 
-## Clonando e executando em sua máquina
+Projeto de automação de testes end-to-end desenvolvido para validar funcionalidades de um e-commerce.
 
-### Pré-requisito:
+Os testes foram implementados utilizando Cypress, cobrindo fluxos principais da aplicação e garantindo o correto funcionamento das funcionalidades críticas.
 
--Node.js - Você encontra em: https://nodejs.org/en/
+---
 
--Visual Studio Code ou qualquer editor de texto - você encontra em: https://code.visualstudio.com/download
+## 🚀 Tecnologias utilizadas
 
--Git: você encontra em: https://git-scm.com/downloads
+* Node.js
+* Cypress
 
+---
 
-Via terminal, rode os seguintes comandos:
-```  
-git clone https://github.com/EBAC-QE/teste-e2e-ebac.git
+## 🌐 Aplicação testada
+
+Ebac Shop
+http://lojaebac.ebaconline.art.br/
+
+---
+
+## 🧪 Cenários automatizados
+
+* 🛒 Fluxo de compra de produtos
+* 🔐 Login de usuário
+* 🧺 Validação de carrinho
+* ✅ Validação de comportamento da aplicação
+
+---
+
+## ▶️ Como executar o projeto
+
+### 1. Clonar o repositório
+
+```bash id="i4gnd8"
+git clone https://github.com/MarinaCanuto/cypress-e2e-tests-ebac-shop.git
 ```
-```
-cd teste-e2e-ebac
+
+### 2. Instalar dependências
+
+```bash id="nqr77r"
+npm install
 ```
 
-#### Para instalar as dependencias:
-```
-npm install 
-```
+### 3. Executar os testes (modo headless)
 
-#### Para executar em moodo Headlesss via console:
-```
+```bash id="zps6rd"
 npx cypress run
 ```
 
-#### Para executar via Dashboard:
+### 4. Executar testes com interface gráfica
+
+```bash id="d1mkzf"
+npx cypress open
 ```
-npx cypress open 
+
+---
+
+## 📂 Estrutura do projeto
+
+```bash id="qjgk4t"
+cypress/
+  ├── e2e          # Casos de teste
+  ├── fixtures     # Massa de dados
+  ├── support      # Configurações e comandos
 ```
-Após abrir o dashboard, selecione um dos navegadores (De preferencia Electron) e siga com as execuções. 
 
+---
 
-### Bibliotecas de apoio:
--Cypress: Framework de automação: https://cypress.io/
+## 💡 Objetivo do projeto
 
-### Bom exercício ;) 
-Fábio & José Ernesto
-Qualidade de software
+Este projeto tem como objetivo:
 
+* Praticar automação de testes end-to-end
+* Validar fluxos críticos de um e-commerce
+* Aplicar boas práticas utilizando Cypress
 
+---
 
+## 📌 Próximos passos
 
+* Adicionar novos cenários de teste
+* Melhorar organização dos testes
+* Implementar relatórios de execução
+* Integrar testes com CI/CD
+
+---
+
+## 👩‍💻 Autora
+
+Marina Sousa Canuto
+QA Engineer em formação com foco em automação de testes
+
+---
