@@ -1,14 +1,14 @@
 {
   "stats": {
     "suites": 1,
-    "tests": 1,
-    "passes": 1,
+    "tests": 2,
+    "passes": 2,
     "pending": 0,
     "failures": 0,
-    "start": "2026-04-25T22:26:50.055Z",
-    "end": "2026-04-25T22:27:38.215Z",
-    "duration": 48160,
-    "testsRegistered": 1,
+    "start": "2026-04-25T22:37:00.072Z",
+    "end": "2026-04-25T22:37:10.377Z",
+    "duration": 10305,
+    "testsRegistered": 2,
     "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
@@ -18,49 +18,68 @@
   },
   "results": [
     {
-      "uuid": "5b8c74cb-5590-4a62-91cb-f2532f34f71d",
+      "uuid": "65203578-109b-4582-848d-445f05ba2551",
       "title": "",
-      "fullFile": "cypress\\e2e\\exercicio-e2e.cy.js",
-      "file": "cypress\\e2e\\exercicio-e2e.cy.js",
+      "fullFile": "cypress\\e2e\\login.cy.js",
+      "file": "cypress\\e2e\\login.cy.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "9cd0e262-25f0-4516-9d76-65eedf6ee45e",
-          "title": "Exercicio - Testes End-to-end - Fluxo de pedido",
+          "uuid": "60d6a400-50d7-4f51-980c-12ebcbe38663",
+          "title": "Funcionalidade Login",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [
             {
-              "title": "Deve fazer um pedido na loja Ebac Shop de ponta a ponta",
-              "fullTitle": "Exercicio - Testes End-to-end - Fluxo de pedido Deve fazer um pedido na loja Ebac Shop de ponta a ponta",
+              "title": "Deve fazer login com sucesso",
+              "fullTitle": "Funcionalidade Login Deve fazer login com sucesso",
               "timedOut": null,
-              "duration": 47978,
+              "duration": 6981,
               "state": "passed",
-              "speed": "slow",
+              "speed": "medium",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "cy.fixture('produtos').then(produtos => {\n  cy.wrap(produtos).each(produto => {\n    _produtosPage.default.visitarProduto(produto.slug);\n    _produtosPage.default.addProdutoCarrinho(produto.tamanho, produto.cor, produto.quantidade);\n  });\n});\ncy.get('.woocommerce-message').contains('Ver carrinho').click();\ncy.get('.checkout-button').click();\ncy.fixture('cliente').then(cliente => {\n  _checkoutPage.default.preencherCheckout(cliente);\n  _checkoutPage.default.finalizarPedido();\n  _checkoutPage.default.validarConfirmacao();\n});",
+              "code": "cy.fixture('perfil').then(perfil => {\n  _loginPage.default.login(perfil.usuario, perfil.senha);\n});\ncy.get('.woocommerce-MyAccount-content', {\n  timeout: 10000\n}).should('be.visible').and('contain', 'Olá');",
               "err": {},
-              "uuid": "a81cfb78-03de-49b4-a379-bcc5306fe595",
-              "parentUUID": "9cd0e262-25f0-4516-9d76-65eedf6ee45e",
+              "uuid": "03115faa-5153-4964-a7af-1d3ef6c0150c",
+              "parentUUID": "60d6a400-50d7-4f51-980c-12ebcbe38663",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve exibir mensagem de erro com usuário inválido",
+              "fullTitle": "Funcionalidade Login Deve exibir mensagem de erro com usuário inválido",
+              "timedOut": null,
+              "duration": 3158,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_loginPage.default.login('email@invalido.com', 'senhaerrada');\ncy.get('.woocommerce-error').should('contain', 'Endereço de e-mail desconhecido.');",
+              "err": {},
+              "uuid": "d3004a51-51ab-4f5e-828a-9ea808554a4a",
+              "parentUUID": "60d6a400-50d7-4f51-980c-12ebcbe38663",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "a81cfb78-03de-49b4-a379-bcc5306fe595"
+            "03115faa-5153-4964-a7af-1d3ef6c0150c",
+            "d3004a51-51ab-4f5e-828a-9ea808554a4a"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 47978,
+          "duration": 10139,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -95,7 +114,7 @@
     "marge": {
       "options": {
         "reportDir": "cypress/reports",
-        "overwrite": false,
+        "overwrite": true,
         "html": true,
         "json": true
       },
