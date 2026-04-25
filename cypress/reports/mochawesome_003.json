@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-04-25T22:05:50.659Z",
+    "end": "2026-04-25T22:06:01.203Z",
+    "duration": 10544,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "1c143e0d-0f91-4219-a25f-66a750799862",
+      "title": "",
+      "fullFile": "cypress\\e2e\\login.cy.js",
+      "file": "cypress\\e2e\\login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "46670c43-4164-411c-90b6-81e6c3e80c39",
+          "title": "Funcionalidade Login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve fazer login com sucesso",
+              "fullTitle": "Funcionalidade Login Deve fazer login com sucesso",
+              "timedOut": null,
+              "duration": 7098,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('perfil').then(perfil => {\n  _loginPage.default.login(perfil.usuario, perfil.senha);\n});\ncy.get('.woocommerce-MyAccount-content', {\n  timeout: 10000\n}).should('be.visible').and('contain', 'Olá');",
+              "err": {},
+              "uuid": "3d49f90f-ea46-4d18-9d60-e28b6400e5f3",
+              "parentUUID": "46670c43-4164-411c-90b6-81e6c3e80c39",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve exibir mensagem de erro com usuário inválido",
+              "fullTitle": "Funcionalidade Login Deve exibir mensagem de erro com usuário inválido",
+              "timedOut": null,
+              "duration": 3267,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_loginPage.default.login('email@invalido.com', 'senhaerrada');\ncy.get('.woocommerce-error').should('contain', 'Endereço de e-mail desconhecido.');",
+              "err": {},
+              "uuid": "f538caf7-f95d-4dbf-b9d7-fe14a394d158",
+              "parentUUID": "46670c43-4164-411c-90b6-81e6c3e80c39",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3d49f90f-ea46-4d18-9d60-e28b6400e5f3",
+            "f538caf7-f95d-4dbf-b9d7-fe14a394d158"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 10365,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
