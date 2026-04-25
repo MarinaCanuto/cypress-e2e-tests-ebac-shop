@@ -2,14 +2,14 @@
   "stats": {
     "suites": 1,
     "tests": 2,
-    "passes": 1,
+    "passes": 2,
     "pending": 0,
-    "failures": 1,
-    "start": "2026-04-25T21:56:37.072Z",
-    "end": "2026-04-25T21:56:56.691Z",
-    "duration": 19619,
+    "failures": 0,
+    "start": "2026-04-25T22:27:42.287Z",
+    "end": "2026-04-25T22:27:52.663Z",
+    "duration": 10376,
     "testsRegistered": 2,
-    "passPercent": 50,
+    "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "69c69ee8-29c5-4c4b-94b7-5da75c01927f",
+      "uuid": "46ce2e0e-d558-4e23-8364-27d6fc4053d8",
       "title": "",
       "fullFile": "cypress\\e2e\\login.cy.js",
       "file": "cypress\\e2e\\login.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "8d97a1da-65f2-48c4-b1ab-4c5074414074",
+          "uuid": "f29e0ff8-83ca-45d3-8e71-4ed3e4d1fb9f",
           "title": "Funcionalidade Login",
           "fullFile": "",
           "file": "",
@@ -38,21 +38,17 @@
               "title": "Deve fazer login com sucesso",
               "fullTitle": "Funcionalidade Login Deve fazer login com sucesso",
               "timedOut": null,
-              "duration": 15484,
-              "state": "failed",
-              "speed": null,
-              "pass": false,
-              "fail": true,
+              "duration": 7070,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
               "pending": false,
               "context": null,
               "code": "cy.fixture('perfil').then(perfil => {\n  _loginPage.default.login(perfil.usuario, perfil.senha);\n});\ncy.get('.woocommerce-MyAccount-content', {\n  timeout: 10000\n}).should('be.visible').and('contain', 'Olá');",
-              "err": {
-                "message": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `.woocommerce-MyAccount-content`, but never found it.",
-                "estack": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `.woocommerce-MyAccount-content`, but never found it.\n    at Context.eval (webpack://teste-e2e-ebac/./cypress/e2e/login.cy.js:15:7)",
-                "diff": null
-              },
-              "uuid": "01a3cfa8-e0cf-4763-957e-feebbe59fd14",
-              "parentUUID": "8d97a1da-65f2-48c4-b1ab-4c5074414074",
+              "err": {},
+              "uuid": "3f0273f8-f393-47d9-9b34-0bd412c31f35",
+              "parentUUID": "f29e0ff8-83ca-45d3-8e71-4ed3e4d1fb9f",
               "isHook": false,
               "skipped": false
             },
@@ -60,7 +56,7 @@
               "title": "Deve exibir mensagem de erro com usuário inválido",
               "fullTitle": "Funcionalidade Login Deve exibir mensagem de erro com usuário inválido",
               "timedOut": null,
-              "duration": 3705,
+              "duration": 3123,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -69,22 +65,21 @@
               "context": null,
               "code": "_loginPage.default.login('email@invalido.com', 'senhaerrada');\ncy.get('.woocommerce-error').should('contain', 'Endereço de e-mail desconhecido.');",
               "err": {},
-              "uuid": "ed9748a6-7772-46d9-87b1-c997ef414503",
-              "parentUUID": "8d97a1da-65f2-48c4-b1ab-4c5074414074",
+              "uuid": "c8d4db34-658c-487d-bbfb-0125cc108ca9",
+              "parentUUID": "f29e0ff8-83ca-45d3-8e71-4ed3e4d1fb9f",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "ed9748a6-7772-46d9-87b1-c997ef414503"
+            "3f0273f8-f393-47d9-9b34-0bd412c31f35",
+            "c8d4db34-658c-487d-bbfb-0125cc108ca9"
           ],
-          "failures": [
-            "01a3cfa8-e0cf-4763-957e-feebbe59fd14"
-          ],
+          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 19189,
+          "duration": 10193,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

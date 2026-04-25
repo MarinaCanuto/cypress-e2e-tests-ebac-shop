@@ -2,14 +2,14 @@
   "stats": {
     "suites": 1,
     "tests": 1,
-    "passes": 0,
+    "passes": 1,
     "pending": 0,
-    "failures": 1,
-    "start": "2026-04-25T21:56:15.344Z",
-    "end": "2026-04-25T21:56:32.387Z",
-    "duration": 17043,
+    "failures": 0,
+    "start": "2026-04-25T22:26:50.055Z",
+    "end": "2026-04-25T22:27:38.215Z",
+    "duration": 48160,
     "testsRegistered": 1,
-    "passPercent": 0,
+    "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "362eb97f-70dc-44e5-8246-5812d015075f",
+      "uuid": "5b8c74cb-5590-4a62-91cb-f2532f34f71d",
       "title": "",
       "fullFile": "cypress\\e2e\\exercicio-e2e.cy.js",
       "file": "cypress\\e2e\\exercicio-e2e.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "433ee7e5-173f-4bcc-b9ce-eacc521c1d95",
+          "uuid": "9cd0e262-25f0-4516-9d76-65eedf6ee45e",
           "title": "Exercicio - Testes End-to-end - Fluxo de pedido",
           "fullFile": "",
           "file": "",
@@ -38,33 +38,29 @@
               "title": "Deve fazer um pedido na loja Ebac Shop de ponta a ponta",
               "fullTitle": "Exercicio - Testes End-to-end - Fluxo de pedido Deve fazer um pedido na loja Ebac Shop de ponta a ponta",
               "timedOut": null,
-              "duration": 16823,
-              "state": "failed",
-              "speed": null,
-              "pass": false,
-              "fail": true,
+              "duration": 47978,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
               "pending": false,
               "context": null,
               "code": "cy.fixture('produtos').then(produtos => {\n  cy.wrap(produtos).each(produto => {\n    _produtosPage.default.visitarProduto(produto.slug);\n    _produtosPage.default.addProdutoCarrinho(produto.tamanho, produto.cor, produto.quantidade);\n  });\n});\ncy.get('.woocommerce-message').contains('Ver carrinho').click();\ncy.get('.checkout-button').click();\ncy.fixture('cliente').then(cliente => {\n  _checkoutPage.default.preencherCheckout(cliente);\n  _checkoutPage.default.finalizarPedido();\n  _checkoutPage.default.validarConfirmacao();\n});",
-              "err": {
-                "message": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `.woocommerce-MyAccount-content`, but never found it.\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Exercicio - Testes End-to-e...`",
-                "estack": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `.woocommerce-MyAccount-content`, but never found it.\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Exercicio - Testes End-to-e...`\n    at Context.eval (webpack://teste-e2e-ebac/./cypress/e2e/exercicio-e2e.cy.js:13:65)",
-                "diff": null
-              },
-              "uuid": "547dc2b2-771b-4188-91cb-df7540d25523",
-              "parentUUID": "433ee7e5-173f-4bcc-b9ce-eacc521c1d95",
+              "err": {},
+              "uuid": "a81cfb78-03de-49b4-a379-bcc5306fe595",
+              "parentUUID": "9cd0e262-25f0-4516-9d76-65eedf6ee45e",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
-          "passes": [],
-          "failures": [
-            "547dc2b2-771b-4188-91cb-df7540d25523"
+          "passes": [
+            "a81cfb78-03de-49b4-a379-bcc5306fe595"
           ],
+          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 16823,
+          "duration": 47978,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
