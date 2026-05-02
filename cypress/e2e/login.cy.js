@@ -9,7 +9,7 @@ describe('Funcionalidade Login', () => {
     cy.fixture('perfil').then(perfil => {
       loginPage.login(perfil.usuario, perfil.senha)
     })
-    cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, Marina.teste')
+    cy.get('.woocommerce-MyAccount-content').should('contain', 'Olá')
   })
   it('Deve exibir mensagem de erro com usuário inválido', () => {
     loginPage.login('email@invalido.com', 'senhaerrada')

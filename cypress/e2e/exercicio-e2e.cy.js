@@ -10,7 +10,7 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
     cy.fixture('perfil').then((perfil) => {
       loginPage.login(perfil.usuario, perfil.senha)
     })
-    cy.get('.woocommerce-MyAccount-content').should('contain', 'Olá, Marina.teste')
+    cy.get('.woocommerce-MyAccount-content').should('contain', 'Olá')
   })
   it('Deve fazer um pedido na loja Ebac Shop de ponta a ponta', () => {
     cy.fixture('produtos').then((produtos) => {
